@@ -18,6 +18,7 @@ pids
 components
 types
 utils
+context
 gatsby-browser.d.ts
 gatsby-browser.js
 gatsby-ssr.d.ts

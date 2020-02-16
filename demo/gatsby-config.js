@@ -1,7 +1,13 @@
 module.exports = {
   plugins: [
-    `@pauliescanlon/gatsby-mdx-embed`,
-    `gatsby-theme-docz`,
+    {
+      resolve: "@pauliescanlon/gatsby-mdx-embed",
+      options: {
+        test: "atzalnogniezijnzekertest",
+        defaultProps: { CodePen: { height: 123 }, Tweet: { theme: "dark" } },
+      },
+    },
+    "gatsby-theme-docz",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
