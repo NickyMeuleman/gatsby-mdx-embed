@@ -52,3 +52,20 @@ export const createStyleSheet = (href: string) => {
 
   document.getElementsByTagName(`head`)[0].appendChild(link)
 }
+
+export const withDefaults = (options: any = { defaultProps: {} }) => {
+  return {
+    defaultProps: {
+      CodePen: {
+        height: 500,
+        tabs: 'result',
+        ...options.defaultProps.CodePen
+      },
+      Tweet: {
+        theme: 'light',
+        align: 'left',
+        ...options.defaultProps.Tweet
+      }
+    }
+  }
+}

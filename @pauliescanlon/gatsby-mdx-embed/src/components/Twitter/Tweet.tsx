@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { PluginOptionsContext } from '../../context/PluginOptionsContext'
+import useDefaultProps from '../../hooks/useDefaultProps'
 
 export interface ITweetProps {
   /** Tweet link */
@@ -10,12 +10,9 @@ export interface ITweetProps {
   align?: 'left' | 'center' | 'right'
 }
 
-export const Tweet: FunctionComponent<ITweetProps> = ({ tweetLink }) => {
-  const {
-    defaultProps: {
-      Tweet: { theme, align }
-    }
-  }: any = React.useContext(PluginOptionsContext)
+export const Tweet: FunctionComponent<ITweetProps> = props => {
+  const { tweetLink, theme, align } = useDefaultProps('Tweet', props)
+  console.log({ tweetLink, theme, align })
   return (
     <div className="twitter-tweet-mdx-embed" style={{ overflow: 'auto' }}>
       <blockquote

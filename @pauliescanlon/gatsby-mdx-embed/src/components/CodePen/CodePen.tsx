@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { PluginOptionsContext } from '../../context/PluginOptionsContext'
+import useDefaultProps from '../../hooks/useDefaultProps'
 
 export interface ICodePenProps {
   /** CodePen id */
@@ -10,14 +10,9 @@ export interface ICodePenProps {
   tabs?: string[] | 'js' | 'css' | 'scss' | 'less' | 'result'
 }
 
-export const CodePen: FunctionComponent<ICodePenProps> = ({ codePenId }) => {
-  const {
-    defaultProps: {
-      CodePen: { height, tabs }
-    }
-  }: any = React.useContext(PluginOptionsContext)
-  console.log({ height, tabs })
-
+export const CodePen: FunctionComponent<ICodePenProps> = props => {
+  const { codePenId, height, tabs } = useDefaultProps('CodePen', props)
+  console.log({ codePenId, height, tabs })
   return (
     <iframe
       title={`codePen-${codePenId}`}

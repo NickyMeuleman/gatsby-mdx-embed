@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdxEmbedProvider } from './components/MdxEmbedProvider'
-import { PluginOptionsContext } from './context/PluginOptionsContext'
-import { withDefaults } from './utils/withDefaults'
+import PluginOptionsContext from './context/PluginOptionsContext'
+import { withDefaults } from './utils'
 
 interface IProviderProps {
   element: React.ReactNode
