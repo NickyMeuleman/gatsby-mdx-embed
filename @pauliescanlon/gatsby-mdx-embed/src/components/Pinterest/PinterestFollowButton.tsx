@@ -7,7 +7,7 @@ export interface IPinterestFollowButtonProps {
 
 export const PinterestFollowButton: FunctionComponent<IPinterestFollowButtonProps> = ({
   username
-}: IPinterestFollowButtonProps) => (
+}) => (
   <a
     className="pinterest-follow-button pinterest-follow-button-mdx-embed"
     data-pin-do="buttonFollow"

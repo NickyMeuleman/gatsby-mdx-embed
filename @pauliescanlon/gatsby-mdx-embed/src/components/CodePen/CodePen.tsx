@@ -11,8 +11,8 @@ export interface ICodePenProps {
 }
 
 export const CodePen: FunctionComponent<ICodePenProps> = props => {
+  // TODO: height and tabs return back as possibly undefined types, fix in useDefaultProps with TS...somehow
   const { codePenId, height, tabs } = useDefaultProps('CodePen', props)
-  console.log({ codePenId, height, tabs })
   return (
     <iframe
       title={`codePen-${codePenId}`}

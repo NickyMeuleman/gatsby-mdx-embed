@@ -61,10 +61,67 @@ export const withDefaults = (options: any = { defaultProps: {} }) => {
         tabs: 'result',
         ...options.defaultProps.CodePen
       },
+      Pin: {
+        size: 'small'
+      },
+      PinterestBoard: {
+        width: 400,
+        height: 250,
+        imageWidth: 80,
+        variant: 'board'
+      },
+      SoundCloud: {
+        width: '100%',
+        height: 'auto',
+        autoPlay: false,
+        visual: false
+      },
+      Spotify: {
+        width: 320,
+        height: 380
+      },
+      Twitch: {
+        autoPlay: false,
+        skipTo: { h: 0, m: 0, s: 0 }
+      },
       Tweet: {
         theme: 'light',
         align: 'left',
         ...options.defaultProps.Tweet
+      },
+      TwitterFollowButton: {
+        showFollowers: false,
+        showUsername: true,
+        size: 'small'
+      },
+      TwitterHashtagButton: {
+        size: 'small'
+      },
+      TwitterList: {
+        theme: 'light',
+        width: '498px',
+        height: null
+      },
+      TwitterMentionButton: {
+        size: 'small'
+      },
+      TwitterTimeline: {
+        theme: 'light',
+        showLikes: null,
+        width: '498px',
+        height: null
+      },
+      Vimeo: {
+        autoPlay: false,
+        skipTo: { h: 0, m: 0, s: 0 }
+      },
+      Wikipedia: {
+        height: 600
+      },
+      YouTube: {
+        aspectRatio: '16:9',
+        autoPlay: false,
+        skipTo: { h: 0, m: 0, s: 0 }
       }
     }
   }

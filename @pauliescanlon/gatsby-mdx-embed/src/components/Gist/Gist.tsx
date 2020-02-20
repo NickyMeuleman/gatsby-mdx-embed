@@ -15,9 +15,7 @@ interface IGistState {
   file?: string
 }
 
-export const Gist: FunctionComponent<IGistProps> = ({
-  gistLink
-}: IGistProps) => {
+export const Gist: FunctionComponent<IGistProps> = ({ gistLink }) => {
   const [gistResponse, setGistResponse] = useState<IGistState>({
     isLoading: true,
     div: '',

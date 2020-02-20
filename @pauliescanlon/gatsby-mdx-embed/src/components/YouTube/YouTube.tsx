@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { getPadding } from '../../utils'
+import useDefaultProps from '../../hooks/useDefaultProps'
 
 export interface IYouTubeProps {
   /** YouTube id */
@@ -16,12 +17,11 @@ export interface IYouTubeProps {
   autoPlay: boolean
 }
 
-export const YouTube: FunctionComponent<IYouTubeProps> = ({
-  youTubeId,
-  aspectRatio = '16:9',
-  autoPlay = false,
-  skipTo = { h: 0, m: 0, s: 0 }
-}: IYouTubeProps) => {
+export const YouTube: FunctionComponent<IYouTubeProps> = props => {
+  const { youTubeId, aspectRatio, autoPlay, skipTo } = useDefaultProps(
+    'YouTube',
+    props
+  )
   const { h, m, s } = skipTo
 
   const tH = h! * 60

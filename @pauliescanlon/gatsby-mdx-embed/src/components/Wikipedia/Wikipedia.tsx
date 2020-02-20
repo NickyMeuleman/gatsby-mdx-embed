@@ -1,4 +1,5 @@
 import React, { FunctionComponent, Fragment, useEffect, useState } from 'react'
+import useDefaultProps from '../../hooks/useDefaultProps'
 
 export interface IWikipediaProps {
   /** Wikipedia page link */
@@ -16,10 +17,8 @@ interface IWikipediaState {
   body?: string
 }
 
-export const Wikipedia: FunctionComponent<IWikipediaProps> = ({
-  wikipediaLink,
-  height = 600
-}: IWikipediaProps) => {
+export const Wikipedia: FunctionComponent<IWikipediaProps> = props => {
+  const { wikipediaLink, height } = useDefaultProps('Wikipedia', props)
   const [wikiResponse, setWikiResponse] = useState<IWikipediaState>({
     isLoading: true,
     hasError: false,

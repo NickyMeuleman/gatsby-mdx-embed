@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import useDefaultProps from '../../hooks/useDefaultProps'
 
 export interface ISoundCloudProps {
   /** SoundCloud link */
@@ -15,22 +16,26 @@ export interface ISoundCloudProps {
   color?: string
 }
 
-export const SoundCloud: FunctionComponent<ISoundCloudProps> = ({
-  soundCloudLink,
-  width = '100%',
-  height = 'auto',
-  autoPlay = false,
-  visual = false,
-  color
-}: ISoundCloudProps) => (
-  <iframe
-    title={`sound-cloud-${soundCloudLink}`}
-    className="soundcloud-mdx-embed"
-    width={width}
-    height={height}
-    scrolling="no"
-    frameBorder="no"
-    allow="autoplay"
-    src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/${soundCloudLink}&color=%23${color}&auto_play=${autoPlay}&visual=${visual}`}
-  />
-)
+export const SoundCloud: FunctionComponent<ISoundCloudProps> = props => {
+  // Does color need a default? It currently has none and is listed as optional prop.
+  const {
+    soundCloudLink,
+    width,
+    height,
+    autoPlay,
+    visual,
+    color
+  } = useDefaultProps('SoundCloud', props)
+  return (
+    <iframe
+      title={`sound-cloud-${soundCloudLink}`}
+      className="soundcloud-mdx-embed"
+      width={width}
+      height={height}
+      scrolling="no"
+      frameBorder="no"
+      allow="autoplay"
+      src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/${soundCloudLink}&color=%23${color}&auto_play=${autoPlay}&visual=${visual}`}
+    />
+  )
+}

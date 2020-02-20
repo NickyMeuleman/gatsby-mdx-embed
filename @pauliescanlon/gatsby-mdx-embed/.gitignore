@@ -19,6 +19,7 @@ components
 types
 utils
 context
+hooks
 gatsby-browser.d.ts
 gatsby-browser.js
 gatsby-ssr.d.ts

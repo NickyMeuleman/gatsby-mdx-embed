@@ -5,9 +5,7 @@ export interface IFlickrProps {
   flickrLink: string
 }
 
-export const Flickr: FunctionComponent<IFlickrProps> = ({
-  flickrLink
-}: IFlickrProps) => (
+export const Flickr: FunctionComponent<IFlickrProps> = ({ flickrLink }) => (
   <span
     className="flickr-embed-mdx"
     data-flickr-embed="true"

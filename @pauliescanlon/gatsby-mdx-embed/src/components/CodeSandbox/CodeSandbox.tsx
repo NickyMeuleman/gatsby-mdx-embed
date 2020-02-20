@@ -7,7 +7,7 @@ export interface ICodeSandboxProps {
 
 export const CodeSandbox: FunctionComponent<ICodeSandboxProps> = ({
   codeSandboxId
-}: ICodeSandboxProps) => (
+}) => (
   <iframe
     title={`codeSandbox-${codeSandboxId}`}
     className="codesandbox-mdx-embed"

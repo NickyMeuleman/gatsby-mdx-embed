@@ -12,7 +12,6 @@ export interface ITweetProps {
 
 export const Tweet: FunctionComponent<ITweetProps> = props => {
   const { tweetLink, theme, align } = useDefaultProps('Tweet', props)
-  console.log({ tweetLink, theme, align })
   return (
     <div className="twitter-tweet-mdx-embed" style={{ overflow: 'auto' }}>
       <blockquote

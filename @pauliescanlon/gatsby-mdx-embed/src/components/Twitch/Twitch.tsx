@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { getPadding } from '../../utils'
+import useDefaultProps from '../../hooks/useDefaultProps'
 
 export interface ITwitchProps {
   /** Twitch id */
@@ -14,13 +15,9 @@ export interface ITwitchProps {
   autoPlay: boolean
 }
 
-export const Twitch: FunctionComponent<ITwitchProps> = ({
-  twitchId,
-  autoPlay = false,
-  skipTo = { h: 0, m: 0, s: 0 }
-}: ITwitchProps) => {
+export const Twitch: FunctionComponent<ITwitchProps> = props => {
+  const { twitchId, autoPlay, skipTo } = useDefaultProps('Twitch', props)
   const { h, m, s } = skipTo
-
   return (
     <div
       className="twitch-mdx-embed"

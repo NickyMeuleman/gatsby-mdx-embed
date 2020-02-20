@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { getPadding } from '../../utils'
+import useDefaultProps from '../../hooks/useDefaultProps'
 
 export interface IVimeoProps {
   /** Vimeo id */
@@ -14,11 +15,8 @@ export interface IVimeoProps {
   autoPlay: boolean
 }
 
-export const Vimeo: FunctionComponent<IVimeoProps> = ({
-  vimeoId,
-  autoPlay = false,
-  skipTo = { h: 0, m: 0, s: 0 }
-}: IVimeoProps) => {
+export const Vimeo: FunctionComponent<IVimeoProps> = props => {
+  const { vimeoId, skipTo, autoPlay } = useDefaultProps('Vimeo', props)
   const { h, m, s } = skipTo
 
   return (
