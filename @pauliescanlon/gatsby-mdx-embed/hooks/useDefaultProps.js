@@ -18,6 +18,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var useDefaultProps = function useDefaultProps(componentKey, passedProps) {
+  // TODO: better TS typings
+  // The returning the same type as Props is not really true, many values that were optional there and might not exist are supplied now.
   var pluginOptions = (0, _react.useContext)(_PluginOptionsContext.default);
   var defaultProps = pluginOptions.defaultProps[componentKey];
   return _objectSpread({}, defaultProps, {}, passedProps);

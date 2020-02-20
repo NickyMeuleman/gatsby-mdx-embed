@@ -59,69 +59,82 @@ export const withDefaults = (options: any = { defaultProps: {} }) => {
       CodePen: {
         height: 500,
         tabs: 'result',
-        ...options.defaultProps.CodePen
+        ...options.defaultProps?.CodePen
       },
       Pin: {
-        size: 'small'
+        size: 'small',
+        ...options.defaultProps?.Pin
       },
       PinterestBoard: {
         width: 400,
         height: 250,
         imageWidth: 80,
-        variant: 'board'
+        variant: 'board',
+        ...options.defaultProps?.PinterestBoard
       },
       SoundCloud: {
         width: '100%',
         height: 'auto',
         autoPlay: false,
-        visual: false
+        visual: false,
+        ...options.defaultProps?.SoundCloud
       },
       Spotify: {
         width: 320,
-        height: 380
+        height: 380,
+        ...options.defaultProps?.Spotify
       },
       Twitch: {
         autoPlay: false,
-        skipTo: { h: 0, m: 0, s: 0 }
+        skipTo: { h: 0, m: 0, s: 0 },
+        ...options.defaultProps?.Twitch
       },
       Tweet: {
         theme: 'light',
         align: 'left',
-        ...options.defaultProps.Tweet
+        ...options.defaultProps?.Tweet
       },
       TwitterFollowButton: {
         showFollowers: false,
         showUsername: true,
-        size: 'small'
+        size: 'small',
+        ...options.defaultProps?.TwitterFollowButton
       },
       TwitterHashtagButton: {
-        size: 'small'
+        size: 'small',
+        ...options.defaultProps?.TwitterHashtagButton
       },
       TwitterList: {
         theme: 'light',
         width: '498px',
-        height: null
+        height: null,
+        ...options.defaultProps?.TwitterList
       },
       TwitterMentionButton: {
-        size: 'small'
+        size: 'small',
+        ...options.defaultProps?.TwitterMentionButton
       },
       TwitterTimeline: {
         theme: 'light',
         showLikes: null,
         width: '498px',
-        height: null
+        height: null,
+        ...options.defaultProps?.TwitterTimeline
       },
       Vimeo: {
         autoPlay: false,
-        skipTo: { h: 0, m: 0, s: 0 }
+        skipTo: { h: 0, m: 0, s: 0 },
+        ...options.defaultProps?.Vimeo
       },
       Wikipedia: {
-        height: 600
+        height: 600,
+        ...options.defaultProps?.Wikipedia
       },
       YouTube: {
         aspectRatio: '16:9',
         autoPlay: false,
-        skipTo: { h: 0, m: 0, s: 0 }
+        skipTo: { h: 0, m: 0, s: 0 },
+        ...options.defaultProps?.YouTube
       }
     }
   }
